@@ -4,6 +4,7 @@ import in.arc.urlShrotner.model.dto.UrlCreationResponse;
 import in.arc.urlShrotner.model.entity.Url;
 import in.arc.urlShrotner.repository.UrlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -13,7 +14,8 @@ import java.util.UUID;
 public class UrlService {
     @Autowired
     private UrlRepository urlRepository;
-    private final String COMPANY_DOMAIN="http://localhost:8080/arc/";
+    @Value("${app.domain.base_url}")
+    private String COMPANY_DOMAIN;
 
     public UrlCreationResponse createShortUrl(String trueUrl){
         Url url=new Url();
