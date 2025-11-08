@@ -1,8 +1,8 @@
-package in.arc.urlShrotner.service;
+package in.arc.urlShortner.service;
 
-import in.arc.urlShrotner.model.dto.UrlCreationResponse;
-import in.arc.urlShrotner.model.entity.Url;
-import in.arc.urlShrotner.repository.UrlRepository;
+import in.arc.urlShortner.model.dto.UrlCreationResponse;
+import in.arc.urlShortner.model.entity.Url;
+import in.arc.urlShortner.repository.UrlRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

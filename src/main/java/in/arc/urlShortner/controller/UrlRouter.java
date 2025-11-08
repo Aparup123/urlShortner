@@ -1,7 +1,7 @@
-package in.arc.urlShrotner.controller;
+package in.arc.urlShortner.controller;
 
 
-import in.arc.urlShrotner.service.UrlService;
+import in.arc.urlShortner.service.UrlService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

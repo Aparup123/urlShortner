@@ -1,4 +1,4 @@
-package in.arc.urlShrotner.model.dto;
+package in.arc.urlShortner.model.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

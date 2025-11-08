@@ -1,4 +1,4 @@
-package in.arc.urlShrotner.model.entity;
+package in.arc.urlShortner.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

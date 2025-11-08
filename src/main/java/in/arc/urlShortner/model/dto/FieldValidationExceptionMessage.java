@@ -1,4 +1,4 @@
-package in.arc.urlShrotner.model.dto;
+package in.arc.urlShortner.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

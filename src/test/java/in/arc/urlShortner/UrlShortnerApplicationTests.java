@@ -1,10 +1,10 @@
-package in.arc.urlShrotner;
+package in.arc.urlShortner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UrlShrotnerApplicationTests {
+class UrlShortnerApplicationTests {
 
 	@Test
 	void contextLoads() {

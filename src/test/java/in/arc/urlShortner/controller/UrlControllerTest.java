@@ -1,9 +1,9 @@
-package in.arc.urlShrotner.controller;
+package in.arc.urlShortner.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.arc.urlShrotner.model.dto.UrlCreationRequest;
-import in.arc.urlShrotner.model.dto.UrlCreationResponse;
-import in.arc.urlShrotner.service.UrlService;
+import in.arc.urlShortner.model.dto.UrlCreationRequest;
+import in.arc.urlShortner.model.dto.UrlCreationResponse;
+import in.arc.urlShortner.service.UrlService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

@@ -1,6 +1,6 @@
-package in.arc.urlShrotner.repository;
+package in.arc.urlShortner.repository;
 
-import in.arc.urlShrotner.model.entity.Url;
+import in.arc.urlShortner.model.entity.Url;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

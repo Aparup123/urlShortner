@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.arc</groupId>
-	<artifactId>urlShrotner</artifactId>
+	<artifactId>urlShortner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>urlShrotner</name>
+	<name>urlShortner</name>
 	<description>This is a platform where users can get a short version of their url.</description>
 	<url/>
 	<licenses>

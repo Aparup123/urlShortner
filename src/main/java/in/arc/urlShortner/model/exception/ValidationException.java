@@ -1,6 +1,5 @@
-package in.arc.urlShrotner.model.exception;
+package in.arc.urlShortner.model.exception;
 
-import lombok.Data;
 import lombok.Getter;
 
 @Getter

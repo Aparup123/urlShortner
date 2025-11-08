@@ -1,8 +1,7 @@
-package in.arc.urlShrotner.util;
+package in.arc.urlShortner.util;
 
-import in.arc.urlShrotner.model.dto.ExceptionResponse;
-import in.arc.urlShrotner.model.dto.FieldValidationExceptionMessage;
-import jakarta.servlet.http.HttpServletResponse;
+import in.arc.urlShortner.model.dto.ExceptionResponse;
+import in.arc.urlShortner.model.dto.FieldValidationExceptionMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 

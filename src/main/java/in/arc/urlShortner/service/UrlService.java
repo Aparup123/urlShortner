@@ -1,14 +1,13 @@
-package in.arc.urlShrotner.service;
+package in.arc.urlShortner.service;
 
-import in.arc.urlShrotner.model.dto.UrlCreationResponse;
-import in.arc.urlShrotner.model.entity.Url;
-import in.arc.urlShrotner.repository.UrlRepository;
+import in.arc.urlShortner.model.dto.UrlCreationResponse;
+import in.arc.urlShortner.model.entity.Url;
+import in.arc.urlShortner.repository.UrlRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @Service

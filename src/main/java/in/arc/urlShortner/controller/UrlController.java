@@ -1,8 +1,8 @@
-package in.arc.urlShrotner.controller;
+package in.arc.urlShortner.controller;
 
-import in.arc.urlShrotner.model.dto.UrlCreationRequest;
-import in.arc.urlShrotner.model.dto.UrlCreationResponse;
-import in.arc.urlShrotner.service.UrlService;
+import in.arc.urlShortner.model.dto.UrlCreationRequest;
+import in.arc.urlShortner.model.dto.UrlCreationResponse;
+import in.arc.urlShortner.service.UrlService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
