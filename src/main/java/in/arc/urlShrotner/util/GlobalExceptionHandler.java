@@ -20,7 +20,6 @@ import java.util.List;
 public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ExceptionResponse> methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e){
-        log.info("Error occurred: Field: {}, Rejected Msg: {}", e.getFieldError().getField(), e.getFieldError().getDefaultMessage());
         List<FieldValidationExceptionMessage> fieldValidationExceptionMessageList = new ArrayList<>();
         for(FieldError fieldError : e.getFieldErrors()){
             fieldValidationExceptionMessageList.add(

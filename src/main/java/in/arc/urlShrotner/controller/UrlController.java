@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/url")
 @Slf4j
 public class UrlController {
-
     @Autowired
     UrlService urlService;
     @PostMapping("/create-short-url")
