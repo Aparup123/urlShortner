@@ -5,6 +5,9 @@ import in.arc.urlShortner.model.dto.UrlCreationRequest;
 import in.arc.urlShortner.model.dto.UrlCreationResponse;
 import in.arc.urlShortner.service.UrlService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -16,8 +19,9 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(UrlController.class)
+@WebMvcTest
 @AutoConfigureMockMvc
+@ExtendWith(MockitoExtension.class)
 public class UrlControllerTest {
 
     @Autowired
