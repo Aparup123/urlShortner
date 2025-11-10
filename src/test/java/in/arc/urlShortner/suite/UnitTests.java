@@ -1,5 +1,6 @@
 package in.arc.urlShortner.suite;
 
+import in.arc.urlShortner.controller.HomeController;
 import in.arc.urlShortner.controller.UrlControllerTest;
 import in.arc.urlShortner.controller.UrlRouterTest;
 import in.arc.urlShortner.repository.UrlRepositoryTest;
@@ -11,6 +12,7 @@ import org.junit.platform.suite.api.Suite;
 @SelectClasses({
         UrlRepositoryTest.class,
         UrlServiceTest.class,
+        HomeController.class,
         UrlControllerTest.class,
         UrlRouterTest.class,
 })
