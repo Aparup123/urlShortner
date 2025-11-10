@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  dockerhub-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Docker Image
+        run: docker build -t aparup2004/urlshortner:latest .
+      - name: Push Image
+        run: |
+          docker login -u aparup2004 -p ${{DOCKERHUB_ACCESS_TOKEN}}
+          docker push aparup2004/urlshortner:latest
