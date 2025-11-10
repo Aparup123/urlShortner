@@ -1,16 +1,25 @@
+name: Build and Push to Docker Hub
+
 on:
   push:
     branches:
-      - "main"
+      - main
 
 jobs:
   dockerhub-publish:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker Image
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
         run: docker build -t aparup2004/urlshortner:latest .
-      - name: Push Image
-        run: |
-          docker login -u aparup2004 -p ${{DOCKERHUB_ACCESS_TOKEN}}
-          docker push aparup2004/urlshortner:latest
+
+      - name: Log in to Docker Hub
+        env:
+          DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+        run: echo "${DOCKERHUB_ACCESS_TOKEN}" | docker login -u aparup2004 --password-stdin
+
+      - name: Push Docker image
+        run: docker push aparup2004/urlshortner:latest
