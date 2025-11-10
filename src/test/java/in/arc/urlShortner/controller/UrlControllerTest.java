@@ -1,12 +1,12 @@
 package in.arc.urlShortner.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import in.arc.urlShortner.model.dto.UrlCreationRequest;
 import in.arc.urlShortner.model.dto.UrlCreationResponse;
 import in.arc.urlShortner.service.UrlService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -59,5 +59,30 @@ public class UrlControllerTest {
                         .content(objectMapper.writeValueAsString(urlCreationRequest)))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(expectedResponse) ));
+    }
+
+    @Test
+    void shouldReturnFieldValidationExceptionMessageGivenEmptyUrl() throws Exception {
+        UrlCreationRequest request=new UrlCreationRequest();
+        request.setUrl("");
+        mockMvc.perform(post("/url/create-short-url")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isBadRequest());
+
+    }
+
+    @Test
+    void shouldReturnFieldValidationExceptionMessageGivenEmptyJsonRequestBody() throws Exception {
+        class EmptyRequest{
+
+        }
+        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        EmptyRequest request=new EmptyRequest();
+        System.out.println("ObjectString: "+ objectMapper.writeValueAsString(request));
+        mockMvc.perform(post("/url/create-short-url")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isBadRequest());
     }
 }
