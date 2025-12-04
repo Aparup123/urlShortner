@@ -20,4 +20,6 @@ public class Url {
     private String shortUrl;
     @Column(columnDefinition = "TEXT")
     private String trueUrl;
+    @OneToOne(mappedBy = "url")
+    private User createdBy;
 }
