@@ -54,7 +54,7 @@ public class UrlControllerTest {
                 "http://www.youtube.com"
         );
 
-        mockMvc.perform(post("/url/create-short-url")
+        mockMvc.perform(post("/api/v1/url/create-short-url")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(urlCreationRequest)))
                 .andExpect(status().isOk())
@@ -65,7 +65,7 @@ public class UrlControllerTest {
     void shouldReturnFieldValidationExceptionMessageGivenEmptyUrl() throws Exception {
         UrlCreationRequest request=new UrlCreationRequest();
         request.setUrl("");
-        mockMvc.perform(post("/url/create-short-url")
+        mockMvc.perform(post("/api/v1/url/create-short-url")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
@@ -80,7 +80,7 @@ public class UrlControllerTest {
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         EmptyRequest request=new EmptyRequest();
         System.out.println("ObjectString: "+ objectMapper.writeValueAsString(request));
-        mockMvc.perform(post("/url/create-short-url")
+        mockMvc.perform(post("/api/v1/url/create-short-url")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest());

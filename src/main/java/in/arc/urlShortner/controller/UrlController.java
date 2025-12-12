@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/url")
+@RequestMapping("/api/v1/url")
 @Slf4j
 public class UrlController {
     @Autowired
