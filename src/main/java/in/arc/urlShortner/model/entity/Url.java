@@ -1,10 +1,7 @@
 package in.arc.urlShortner.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -17,9 +14,11 @@ public class Url {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
     private String shortUrl;
     @Column(columnDefinition = "TEXT")
     private String trueUrl;
-    @OneToOne(mappedBy = "url")
+    @ManyToOne
+    @ToString.Exclude
     private User createdBy;
 }
