@@ -14,7 +14,7 @@ public class Url {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-
+    private String urlHash;
     private String shortUrl;
     @Column(columnDefinition = "TEXT")
     private String trueUrl;
