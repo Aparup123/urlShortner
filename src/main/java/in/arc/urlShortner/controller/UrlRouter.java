@@ -16,8 +16,8 @@ public class UrlRouter {
     @Autowired
     UrlService urlService;
 
-    @GetMapping("/{id}")
-    public void routeUrl(HttpServletResponse response, @PathVariable String id) throws IOException {
-        response.sendRedirect(urlService.getTrueUrlFromShortUrl(id));
+    @GetMapping("/{urlHash}")
+    public void routeUrl(HttpServletResponse response, @PathVariable String urlHash) throws IOException {
+        response.sendRedirect(urlService.getTrueUrlFromUrlHash(urlHash));
     }
 }
