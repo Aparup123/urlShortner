@@ -2,6 +2,7 @@ package in.arc.urlShortner.repository;
 
 import in.arc.urlShortner.model.entity.Url;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -58,4 +59,12 @@ public class UrlRepositoryTest {
 
     }
 
+    @Test
+    void shouldGetTrueUrlFromUrlHash(){
+        String exampleTrueUrl="http://yt.com";
+        String exampleUrlHash="1a2fd2f2";
+        Url url=Url.builder().trueUrl(exampleTrueUrl).urlHash(exampleUrlHash).build();
+        urlRepository.save(url);
+        assertEquals(exampleTrueUrl, urlRepository.findByUrlHash(exampleUrlHash).getTrueUrl());
+    }
 }
